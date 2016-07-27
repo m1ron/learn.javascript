@@ -1,2 +1,2 @@
-var consoleRec = require('./02.functions/consoleRec.js');
-consoleRec(['я', 'умею', 'писать', 'рекурсивные', 'функции'], 0);
+var f = require('./js/02.js');
+f.consoleRec(['я', 'умею', 'писать', 'рекурсивные', 'функции'], 0);

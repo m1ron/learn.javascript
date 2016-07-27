@@ -31,4 +31,4 @@ consoleRec = function(arr, start) {
     }
 };
 
-module.exports = consoleRec;
+module.exports.consoleRec = consoleRec;
