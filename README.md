@@ -1,4 +1,4 @@
-# Learning 'dark' areas of vanillaJS
+# Learning "dark" areas of Vanilla JS
 
 ## Technologies
 
