@@ -2,14 +2,34 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Sorting</title>
 </head>
 <body>
 
 	<script>
-		function bubble(arr) {
-			var i, j, a, k = 0;
-			console.log('Sorting:', arr);
+
+		// Stupid
+		function stupid(aa) {
+			var start = new Date(), finish, i = 0, k = 0, arr = aa.slice();
+			while (i < arr.length) {
+				if (arr[i] > arr[i + 1]) {
+					a = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = a;
+					i = 0;
+				} else {
+					i = i + 1;
+				}
+				k++;
+			}
+			finish = new Date();
+			//console.log('Stupid:', arr);
+			console.log('Stupid:', k, (finish - start) + 'ms');
+		}
+
+		// Custom
+		function custom(aa) {
+			var start = new Date(), finish, i, j, a, k = 0, arr = aa.slice();
 			for (i = 1; i < arr.length; i = i + 1) {
 				j = i;
 				while (arr[j] < arr[j - 1]) {
@@ -20,19 +40,50 @@
 					k++;
 				}
 			}
-			console.log('Sorted:', arr, k);
+			finish = new Date();
+			//console.log('Custom:', arr);
+			console.log('Custom:', k, (finish - start) + 'ms');
 		}
 
-		var big = [
-			[74, 20, 12, 5, -0.34, 9, 1, 46, 64, 22],
-			[12, 20, 12, 5, -0.34, 44, 1, 66, 64, 22],
-			[74, 20, 66, 5, -0.34, 9, 1, 46, 64, 22]
-		];
-
-		for (var f = 0; f < big.length; f = f + 1) {
-			bubble(big[f]);
+		// Bubble
+		function bubble(aa) {
+			var start = new Date(), finish, i = 0, k = 0, arr = aa.slice(), len = arr.length;
+			while (i < len) {
+				if (arr[i] > arr[i + 1]) {
+					a = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = a;
+				}
+				i++;
+				if (i === len) {
+					i = 0;
+					len--;
+				}
+				k++;
+			}
+			finish = new Date();
+			console.log('Bubble:', k, (finish - start) + 'ms');
 		}
 
+		// Shaker
+		function shaker(aa) {
+			var start = new Date(), finish, i = 0, k = 0, arr = aa.slice();
+
+
+			finish = new Date();
+			console.log('Bubble:', k, (finish - start) + 'ms');
+		}
+
+		var l = 10, big = [];
+
+		for (var u = 0; u < l; u++) {
+			big[u] = Math.floor(Math.random() * 10);
+		}
+
+		console.log('Default:', big);
+		//custom(big);
+		//stupid(big);
+		//bubble(big);
 
 	</script>
 
