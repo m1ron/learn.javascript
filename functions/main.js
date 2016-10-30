@@ -19,7 +19,8 @@
  * @param {string} start - Начальный элемент для перебора массива.
  */
 
-consoleRec = function(arr, start) {
+var consoleRec = function(arr, start) {
+    /* global arguments */
     if (typeof start == 'undefined') {
         start = 0;
     }
